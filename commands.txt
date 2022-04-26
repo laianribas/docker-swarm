@@ -1,0 +1,26 @@
+# NODE 1
+ssh ip172-18-0-65-c9jip6p4lkkg00deeop0@direct.labs.play-with-docker.com
+
+# NODE 2
+ssh ip172-18-0-79-c9jip6p4lkkg00deeop0@direct.labs.play-with-docker.com
+
+# NODE 3
+ssh ip172-18-0-81-c9jip6p4lkkg00deeop0@direct.labs.play-with-docker.com
+
+# COMMANDS
+
+docker swarm init --advertise-addr <ip>
+docker node ls
+docker swarm join --token <token> <ip>:<port>
+docker service create --name <name> <image>
+docker service ls
+docker service rm <name>
+docker service create --name <name> --replicas <number> <image>
+docker swarm join-token manager
+docker node rm <id>
+docker service ps <id>
+docker node update --availability drain <id>
+docker network create
+docker service update --network-add <rede> <id>
+
+docker swarm join --token SWMTKN-1-3j8q0qw98kpvoxwzbr9pn8umujdem8bcb3m0pnah0puqvl15i7-794l9v97yb8f7z4oafwo550ld 192.168.0.8:2377
